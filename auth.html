@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TaskMaster — Welcome</title>
+  <title>TaskMaster — Sign In</title>
   <link rel="stylesheet" href="auth.css"/>
   <link rel="stylesheet" href="nolan.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,12 @@
   <div id="cursorGlow"></div>
   <div id="cursorTrail"></div>
 
-  <!-- Floating color blobs -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-  <div class="blob blob-4"></div>
-
-  <!-- Main layout -->
+  <!-- Main centered layout -->
   <div class="auth-root">
+    <div class="auth-panel">
 
-    <!-- ── LEFT BRAND PANEL ── -->
-    <div class="brand-panel">
-      <!-- Logo -->
-      <div class="brand-logo">
+      <!-- Minimal Brand Header -->
+      <div class="auth-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 48 48" fill="none">
             <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#lg1)"/>
@@ -54,91 +47,7 @@
         <span class="brand-name">TaskMaster</span>
       </div>
 
-      <!-- Headline -->
-      <div class="brand-content">
-        <h1 class="brand-headline">
-          Your work,<br/>
-          <span class="brand-gradient">beautifully organized.</span>
-        </h1>
-        <p class="brand-sub">The most cinematic task manager ever built. Stay focused, move fast, ship more.</p>
-      </div>
-
-      <!-- Feature pills -->
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">⚡</div>
-          <div>
-            <div class="feature-title">Instant sync</div>
-            <div class="feature-desc">Zero lag, everywhere</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎨</div>
-          <div>
-            <div class="feature-title">Cinematic UI</div>
-            <div class="feature-desc">Designed to inspire</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔒</div>
-          <div>
-            <div class="feature-title">Private & secure</div>
-            <div class="feature-desc">Your data, your rules</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📊</div>
-          <div>
-            <div class="feature-title">Rich analytics</div>
-            <div class="feature-desc">Track your progress</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Preview cards floating -->
-      <div class="preview-cards">
-        <div class="preview-card pc-1">
-          <div class="pc-left">
-            <div class="pc-dot" style="background:#b09eff"></div>
-            <div>
-              <div class="pc-title">Design System v2</div>
-              <div class="pc-meta">Design · 3 subtasks</div>
-            </div>
-          </div>
-          <span class="pc-tag progress">In Progress</span>
-        </div>
-        <div class="preview-card pc-2">
-          <div class="pc-left">
-            <div class="pc-dot" style="background:#4ade80"></div>
-            <div>
-              <div class="pc-title">API Integration</div>
-              <div class="pc-meta">Dev · Completed</div>
-            </div>
-          </div>
-          <span class="pc-tag done">Done ✓</span>
-        </div>
-        <div class="preview-card pc-3">
-          <div class="pc-left">
-            <div class="pc-dot" style="background:#fb923c"></div>
-            <div>
-              <div class="pc-title">User Research</div>
-              <div class="pc-meta">Work · Due today</div>
-            </div>
-          </div>
-          <span class="pc-tag urgent">Urgent</span>
-        </div>
-      </div>
-
-      <!-- Trust row -->
-      <div class="trust-row">
-        <div class="trust-item"><span class="trust-icon">🔐</span> 256-bit SSL</div>
-        <div class="trust-item"><span class="trust-icon">🛡️</span> GDPR</div>
-        <div class="trust-item"><span class="trust-icon">⭐</span> 50K+ users</div>
-      </div>
-    </div>
-
-    <!-- ── RIGHT AUTH PANEL ── -->
-    <div class="auth-panel">
+      <!-- Glass Auth Card -->
       <div class="auth-card">
 
         <!-- Tab switcher -->
@@ -150,7 +59,7 @@
           </div>
         </div>
 
-        <!-- ── SIGN IN ── -->
+        <!-- ── SIGN IN FORM ── -->
         <div class="auth-form active" id="formSignin">
           <div class="form-header">
             <h2>Welcome back 👋</h2>
@@ -158,13 +67,13 @@
           </div>
 
           <div class="social-row">
-            <button class="social-btn" onclick="socialLogin('Google')">
+            <button type="button" class="social-btn" onclick="openSocialModal('Google')">
               <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-              Continue with Google
+              <span>Continue with Google</span>
             </button>
-            <button class="social-btn" onclick="socialLogin('GitHub')">
+            <button type="button" class="social-btn" onclick="openSocialModal('GitHub')">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              Continue with GitHub
+              <span>Continue with GitHub</span>
             </button>
           </div>
 
@@ -174,7 +83,6 @@
             <div class="field">
               <label>Email address</label>
               <div class="input-wrap">
-                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <input type="email" id="siEmail" placeholder="you@example.com" required autocomplete="email"/>
               </div>
             </div>
@@ -184,7 +92,6 @@
                 <a href="#" class="forgot-link" onclick="forgotPassword(event)">Forgot password?</a>
               </label>
               <div class="input-wrap">
-                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 <input type="password" id="siPassword" placeholder="Enter your password" required autocomplete="current-password"/>
                 <button type="button" class="eye-btn" onclick="togglePwd('siPassword',this)" aria-label="Toggle password">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -213,41 +120,50 @@
           <p class="auth-switch">Don't have an account? <a href="#" onclick="showTab('signup')">Sign up free →</a></p>
         </div>
 
-        <!-- ── SIGN UP ── -->
+        <!-- ── SIGN UP FORM ── -->
         <div class="auth-form" id="formSignup">
           <div class="form-header">
             <h2>Create account ✨</h2>
-            <p>Join 50,000+ productive people today</p>
+            <p>Start organizing your tasks today</p>
           </div>
+
+          <div class="social-row">
+            <button type="button" class="social-btn" onclick="openSocialModal('Google')">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              <span>Sign up with Google</span>
+            </button>
+            <button type="button" class="social-btn" onclick="openSocialModal('GitHub')">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+              <span>Sign up with GitHub</span>
+            </button>
+          </div>
+
+          <div class="divider"><span>or sign up with email</span></div>
 
           <form id="signupForm" onsubmit="handleSignup(event)">
             <div class="field-row">
               <div class="field">
                 <label>First Name</label>
                 <div class="input-wrap">
-                  <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  <input type="text" id="suFirst" placeholder="John" required/>
+                  <input type="text" id="suFirst" placeholder="First name" required/>
                 </div>
               </div>
               <div class="field">
                 <label>Last Name</label>
                 <div class="input-wrap">
-                  <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  <input type="text" id="suLast" placeholder="Doe" required/>
+                  <input type="text" id="suLast" placeholder="Last name" required/>
                 </div>
               </div>
             </div>
             <div class="field">
               <label>Email address</label>
               <div class="input-wrap">
-                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <input type="email" id="suEmail" placeholder="you@example.com" required autocomplete="email"/>
               </div>
             </div>
             <div class="field">
               <label>Password</label>
               <div class="input-wrap">
-                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 <input type="password" id="suPassword" placeholder="Min. 8 characters" required oninput="checkStrength(this.value)" autocomplete="new-password"/>
                 <button type="button" class="eye-btn" onclick="togglePwd('suPassword',this)" aria-label="Toggle password">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -261,7 +177,6 @@
             <div class="field">
               <label>Confirm Password</label>
               <div class="input-wrap">
-                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 <input type="password" id="suConfirm" placeholder="Repeat password" required autocomplete="new-password"/>
                 <button type="button" class="eye-btn" onclick="togglePwd('suConfirm',this)" aria-label="Toggle password">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -290,6 +205,17 @@
           <p class="auth-switch">Already have an account? <a href="#" onclick="showTab('signin')">Sign in →</a></p>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Account Chooser Modal -->
+  <div class="social-modal-overlay" id="socialModalOverlay" onclick="closeSocialModalOnBackdrop(event)">
+    <div class="social-modal-card" id="socialModalCard">
+      <div class="social-modal-header" id="socialModalHeader"></div>
+      <div class="social-modal-body" id="socialModalBody"></div>
+      <div class="social-modal-footer">
+        <button type="button" class="btn-social-cancel" onclick="closeSocialModal()">Cancel</button>
       </div>
     </div>
   </div>

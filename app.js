@@ -102,6 +102,7 @@ drawWallpaper();
 // DOM particles
 (function spawnDomParticles(){
   const c=document.getElementById('particles-container');
+  if(!c) return;
   for(let i=0;i<28;i++){
     const p=document.createElement('div'); p.className='particle';
     p.style.cssText='left:'+Math.random()*100+'%;bottom:'+Math.random()*10+'%;width:'+(Math.random()*3+1)+'px;height:'+(Math.random()*3+1)+'px;animation-duration:'+(Math.random()*12+6)+'s;animation-delay:'+(Math.random()*10)+'s;';
